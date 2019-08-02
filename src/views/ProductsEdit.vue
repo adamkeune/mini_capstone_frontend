@@ -64,10 +64,10 @@ export default {
     },
     destroyProduct(product) {
       axios.delete(`api/products/${product.id}`).then(response => {
-        console.log("Product deleted!", response.data);
+        this.$router.push("/");
       });
-      let index = this.products.indexOf(product);
-      this.products.splice(index, 1);
+      // let index = this.products.indexOf(product);
+      // this.products.splice(index, 1);
     }
   }
 };

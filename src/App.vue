@@ -29,6 +29,16 @@
               </router-link>
             </li>
             <li class="nav-item">
+              <router-link to="/signup" class="nav-link" href="#">
+                Signup
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/login" class="nav-link" href="#">
+                Login
+              </router-link>
+            </li>
+            <li class="nav-item">
               <router-link to="/products/new" class="nav-link" href="#">
                 Create New Product
               </router-link>

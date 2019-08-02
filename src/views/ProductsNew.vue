@@ -1,7 +1,7 @@
 <template>
   <div class="new">
     <div class="container home">
-      <form v-on:submit.prevent="submit()">
+      <form v-on:submit.prevent="createProduct()">
         <h1>Create New Product</h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -37,11 +37,16 @@
 </template>
 
 <style>
-input {
+.btn {
+  display: block;
+  width: 20%;
+  margin: 0 auto;
+}
+/*input {
   display: block;
   margin: 0 auto;
   width: 60%;
-}
+}*/
 </style>
 
 <script>
@@ -74,15 +79,9 @@ export default {
         .post("/api/products", params)
         .then(response => {
           console.log("Success!", response.data);
-          this.title = "";
-          this.author = "";
-          this.description = "";
-          this.price = "";
-          this.imageUrl = "";
-          this.supplier = "";
           this.$router.push("/");
         })
-        .catch(error => console.log(error.response)); // not complete, need to display on front end
+        .catch(error => (this.errors = error.response.data.errors)); // not complete, need to display on front end
     }
   }
 };
