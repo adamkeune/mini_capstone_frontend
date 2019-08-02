@@ -28,6 +28,11 @@
                 About
               </router-link>
             </li>
+            <li class="nav-item">
+              <router-link to="/products/new" class="nav-link" href="#">
+                Create New Product
+              </router-link>
+            </li>
             <!-- <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -105,6 +110,10 @@ body {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.navbar-brand {
+  font-size: 5em;
 }
 
 .card {
